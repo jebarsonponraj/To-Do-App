@@ -3,6 +3,14 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid rebeccapurple !important; */
+    /* background-color: chartreuse; */
+    
+}
+
+html{
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body{
@@ -10,33 +18,32 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Ubuntu', sans-serif;
+    
 }
 
 li{
-    /* list-style: none; */
+    list-style: none;
 }
 
 
 .main-container{
+    display: grid;
+    grid-template-rows: 1fr 6fr 1fr;
     margin-top: 2rem;
     padding: 1rem;
     width: 35rem;
-    height: 40rem;
-    background: rgba(255, 255, 255, 0.05);
+    height: 42rem;
+    background: rgba(255, 255, 255, 0.05); 
     border-radius: 16px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
-
+    position: relative;
 }
 
 .to-do-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 5rem;
+    overflow-y: auto;
+    height: 30rem;
 }
 
 .header{
@@ -62,4 +69,123 @@ li{
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
+}
+
+.img-container{
+    display: none;
+    height: 3rem;
+    /* display: flex; */
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.welcome-img{
+    margin-top: 17rem;
+    width: 15rem;
+}
+
+.welcome-text{
+    width: 15rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.input-container{
+    position: relative;
+    top: 2rem;
+}
+
+.input-box{
+    width: 100%;
+    height: 2.5rem;
+    border-radius: .2rem;
+    border: none;
+}
+
+.main-list{ 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.list{
+    display: flex;
+    flex: 2;
+    align-items: center;
+    background-color: aliceblue;
+    width: 100%;
+    padding: 5px;
+    border-radius: .2rem;
+    position: relative;
+}
+.list p{
+    margin-left: 8px;
+    width: 85%;
+}
+
+.circle-icon{
+    margin-left: 5px;
+    font-size: 1.5rem;
+}
+
+.checkmark-icon{
+    display: none;
+    left: 15px;
+    font-size: 15px;
+    position: absolute;
+}
+
+.checkmark-icon .active{
+    display: block;
+}
+
+.delete-icon{
+    display: none;
+    position: absolute;
+    right: 1rem;
+}
+
+.delete-icon .active{
+    display: block;
+}
+
+input:focus{
+    outline: none;
+}
+
+.input-text{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: -2.1rem;
+    margin-left: .4rem;
+    z-index: -1;
+}
+
+.add-icon{
+    font-size: 1.7rem;
+    padding-right: .3rem;
+}
+
+.add-text{
+    font-size: 1rem;
+}
+
+input::placeholder{
+    opacity: 0;
+    padding-left: .5rem;
+}
+
+input:focus::placeholder{
+    opacity: 1;
+}
+
+input[type=text]{
+    font-size: 1rem;
+    padding-left: .6rem;
 }

@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
     <title>To Do List App</title>
@@ -18,12 +20,31 @@
             </div>
             <button class="menu"><p>...</p></button>
         </div>
+        <div class="img-container">
+            <img src="/images/bullseye.png" alt="Bullseye" class="welcome-img">
+            <p class="welcome-text">Add your tasks</p>
+        </div>
         <div class="to-do-container">
-            
             <ul class="main-list">
+                <li class="list">
+                    <ion-icon class="checkmark-icon" name="checkmark-sharp"></ion-icon>
+                    <ion-icon class="circle-icon" name="ellipse-outline"></ion-icon>
+                    <p>New task</p>
+                    <ion-icon class="delete-icon" name="trash-sharp"></ion-icon>
+                </li>
+               
+                
+                
+                
             </ul>
         </div>
-        
+        <div class="input-container">
+            <input type="text" class="input-box" placeholder="Type Something.....">
+            <div class="input-text">
+                <ion-icon class="add-icon" name="add-outline"></ion-icon>
+                <span class="add-text">Add a task</span>
+            </div>
+        </div>
     </div>
 
 

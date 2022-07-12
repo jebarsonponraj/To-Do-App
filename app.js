@@ -16,6 +16,6 @@ input.addEventListener("keydown", function(e){
 })
 
 
-list.addEventListener("click", function(){
-    ul.removeChild(list)
-})
+// list.addEventListener("click", function(){
+//     ul.removeChild(list)
+// })
