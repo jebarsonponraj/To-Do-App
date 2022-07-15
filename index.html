@@ -12,42 +12,69 @@
     <title>To Do List App</title>
 </head>
 <body>
+    
     <div class="main-container">
+        
         <div class="header">
+            <div class="theme">
+                <p>Theme</p>
+                <ul class="colors-container">
+                    <li class="colors" style="background-color: rgb(104, 194, 243);"></li>
+                    <li class="colors" style="background-color: greenyellow;"></li>
+                    <li class="colors" style="background-color: violet;"></li>
+                    <li class="colors" style="background-color: lightskyblue;"></li>
+                    <li class="colors" style="background-color: lightcoral;"></li>
+                    <li class="colors" style="background-color: mediumslateblue;"></li>
+                    <li class="colors" style="background-color: pink;"></li>
+                    <li class="colors" style="background-color: lightseagreen;"></li>
+                </ul>
+            
+                
+                </div>
             <div class="about">
                 <h1 class="description">My Day</h1>
-                <p>Monday, Jul 11</p>
+                <p class="date"></p>
             </div>
-            <button class="menu"><p>...</p></button>
+            <a class="menu"><p>...</p></a>
+            
         </div>
+        
         <div class="img-container">
-            <img src="/images/bullseye.png" alt="Bullseye" class="welcome-img">
+            <img src="./assets/images/bullseye.png" alt="Bullseye" class="welcome-img">
             <p class="welcome-text">Add your tasks</p>
-        </div>
-        <div class="to-do-container">
+
+            <div class="to-do-container">
             <ul class="main-list">
-                <li class="list">
-                    <ion-icon class="checkmark-icon" name="checkmark-sharp"></ion-icon>
-                    <ion-icon class="circle-icon" name="ellipse-outline"></ion-icon>
+                <!-- <li class="list">
+                    <div class="task-icons">
+                        <ion-icon class="checkmark-icon" name="checkmark-sharp"></ion-icon>
+                        <ion-icon class="circle-icon" name="ellipse-outline"></ion-icon>
+                    </div>
                     <p>New task</p>
-                    <ion-icon class="delete-icon" name="trash-sharp"></ion-icon>
-                </li>
+                    <ion-icon class="delete-icon"  name="trash-sharp"></ion-icon>
+                </li> -->
+               
                
                 
                 
                 
             </ul>
         </div>
+        </div>
+        
         <div class="input-container">
-            <input type="text" class="input-box" placeholder="Type Something.....">
-            <div class="input-text">
-                <ion-icon class="add-icon" name="add-outline"></ion-icon>
-                <span class="add-text">Add a task</span>
-            </div>
+            <form class="form">
+                <input type="text" class="input-box" placeholder="Add task">
+                <div class="input-text">
+                    <ion-icon class="add-icon" name="add-outline"></ion-icon>
+                </div>
+            </form>
+          
         </div>
     </div>
 
-
+    <audio class="task-complete-audio" src="./assets/sound/task_complete.mp3"></audio>
+    <audio class="task-delete-audio" src="./assets/sound/delete_sound.mp3"></audio>
 
 
 

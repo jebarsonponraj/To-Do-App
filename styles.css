@@ -4,13 +4,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* outline: 1px solid rebeccapurple !important; */
-    /* background-color: chartreuse; */
+   
     
 }
 
 html{
     font-family: 'Ubuntu', sans-serif;
+    scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 body{
@@ -18,7 +19,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 li{
@@ -31,17 +31,69 @@ li{
     grid-template-rows: 1fr 6fr 1fr;
     margin-top: 2rem;
     padding: 1rem;
-    width: 35rem;
+    width: 37rem;
     height: 42rem;
     background: rgba(255, 255, 255, 0.05); 
     border-radius: 16px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
     position: relative;
 }
 
+
+.theme{
+    display: none;
+    background-color: #fff;
+    max-width: 100%;
+    width: 17rem;
+    height: 12rem;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    margin-right: 2rem;
+    border-radius: 6px;
+    z-index: 1;
+
+}
+
+
+.theme p{
+    text-align: start;
+    margin: 10px 0 1px 10px;
+}
+
+.theme.active{
+    display: block;
+
+}
+
+.colors-container{
+    padding: .5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    
+}
+
+.colors{
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: hsl(0, 42%, 57%);
+    position: relative;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    
+}
+
+
+.colors:is(:hover, :focus) { outline-color: greenyellow; }
+
+.colors.active { outline-color: greenyellow; }
+
+.colors:active { transform: scale(0.98); }
+
+
 .to-do-container{
+    width: 100%;
     overflow-y: auto;
     height: 30rem;
 }
@@ -55,6 +107,11 @@ li{
 .menu{
     width: 1.7rem;
     height: 1.7rem;
+}
+
+
+.menu:hover{
+    
     border: none;
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.54);
@@ -72,9 +129,9 @@ li{
 }
 
 .img-container{
-    display: none;
-    height: 3rem;
-    /* display: flex; */
+    height: 30rem;
+    width: 100%;
+    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -82,11 +139,14 @@ li{
 }
 
 .welcome-img{
-    margin-top: 17rem;
+    display: none;
+    margin-top: 1rem;
     width: 15rem;
 }
 
+
 .welcome-text{
+    display: none;
     width: 15rem;
     font-size: 1.5rem;
     font-weight: 500;
@@ -105,12 +165,16 @@ li{
     border: none;
 }
 
+.active{
+    display: block;
+}
+
 .main-list{ 
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: .5rem;
 }
 
 .list{
@@ -128,30 +192,53 @@ li{
     width: 85%;
 }
 
+.list:active{
+    transform: scale(0.98);
+}
+
+
 .circle-icon{
     margin-left: 5px;
     font-size: 1.5rem;
+    
+}
+
+
+.checkmark-icon.active{
+    color: #fff;
 }
 
 .checkmark-icon{
-    display: none;
+    opacity: 0;
+    top: 10px;
     left: 15px;
     font-size: 15px;
     position: absolute;
 }
 
-.checkmark-icon .active{
-    display: block;
+.circle-icon:hover {
+    cursor: pointer;
 }
+
+.task-icons:is(:hover) .checkmark-icon{
+    opacity: 1;
+}
+
 
 .delete-icon{
-    display: none;
     position: absolute;
     right: 1rem;
+    opacity: 0;
 }
 
-.delete-icon .active{
-    display: block;
+.list:is(:hover, :focus-within) .delete-icon{
+    opacity: 1;
+}
+
+
+.delete-icon:hover{
+    color: red;
+    cursor: pointer;
 }
 
 input:focus{
@@ -165,27 +252,66 @@ input:focus{
     margin-top: -2.1rem;
     margin-left: .4rem;
     z-index: -1;
+    opacity: 1;
+}
+
+.add-icon.active{
+    display: none;
+}
+
+.add-text.active{
+    display: none;
 }
 
 .add-icon{
     font-size: 1.7rem;
     padding-right: .3rem;
+    display: block;
 }
 
 .add-text{
     font-size: 1rem;
+    display: block;
 }
 
 input::placeholder{
-    opacity: 0;
-    padding-left: .5rem;
+    padding-left: 1.6rem;
 }
 
-input:focus::placeholder{
-    opacity: 1;
+.placeholderClass::-webkit-input-placeholder{
+    padding-left: .1rem;
 }
+
+
 
 input[type=text]{
     font-size: 1rem;
     padding-left: .6rem;
+}
+
+
+
+/* Media Queries for responsiveness */
+
+@media (max-width: 615px) {
+    .main-container{
+        width: 100%;
+        margin-top: 0;
+        height: 100vh;
+        padding: 0 .3rem .1rem .3rem;
+        background-color: transparent;
+        
+    }
+
+    .theme{
+        top: 3rem;
+        margin-right: 1.2rem;
+
+    }
+}
+
+@media (max-width: 550px){
+    .theme{
+        width: 15rem;
+    }
 }
