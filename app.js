@@ -142,6 +142,6 @@ menuBtn.addEventListener("click",function() {
 colors.forEach(color => {
     color.addEventListener("click",function(){
         console.log(color);
-        document.body.style.backgroundColor = `${color.style.backgroundColor}`
+        document.body.style.background = `${color.style.background}`
     })
 });

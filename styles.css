@@ -15,7 +15,7 @@ html{
 }
 
 body{
-    background-color: rgb(104, 194, 243);
+    background: linear-gradient(to right, #ff6f91, #ff7887, #ff817e, #ff8c76, #ff9671);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -299,7 +299,9 @@ input[type=text]{
         margin-top: 0;
         height: 100vh;
         padding: 0 .3rem .1rem .3rem;
-        background-color: transparent;
+        background: transparent;
+        border-radius: 0%;
+        box-shadow: none;
         
     }
 
