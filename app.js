@@ -36,30 +36,30 @@ date.textContent = `${day[now.getDay()]}, ${month[now.getMonth()]} ${now.getDate
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   const userTask = inputBox.value;
+  if(userTask){
+        const html = `
+    <li class="list">
+    <div class="task-icons">
+    <ion-icon class="checkmark-icon" name="checkmark-sharp"></ion-icon>
+    <ion-icon class="circle-icon" name="ellipse-outline"></ion-icon>
+    </div>
+    <p class="task">${inputBox.value}</p>
+    <ion-icon class="delete-icon" name="trash-sharp"></ion-icon>
+    </li>`  
+        
+    ul.insertAdjacentHTML("afterbegin",html);
+        
+    tasks.push(userTask);
+    if(tasks.length < 1){
+        welcomeImg.classList.add("active");
+        welcomeText.classList.add("active");
+    }
+    else{
+        welcomeImg.classList.remove("active");
+        welcomeText.classList.remove("active");
+    }
+  }
   
-  
-  const html = `
-  <li class="list">
-  <div class="task-icons">
-  <ion-icon class="checkmark-icon" name="checkmark-sharp"></ion-icon>
-  <ion-icon class="circle-icon" name="ellipse-outline"></ion-icon>
-  </div>
-  <p class="task">${inputBox.value}</p>
-  <ion-icon class="delete-icon" name="trash-sharp"></ion-icon>
-  </li>`
-      
-  ul.insertAdjacentHTML("afterbegin",html);
-      
-  tasks.push(userTask);
-  if(tasks.length < 1){
-    welcomeImg.classList.add("active");
-    welcomeText.classList.add("active");
-   }
-  else{
-    welcomeImg.classList.remove("active");
-    welcomeText.classList.remove("active");
-   }
-  console.log(tasks.length);
   this.reset();
 });
 
