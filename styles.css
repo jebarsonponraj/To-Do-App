@@ -4,8 +4,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-   
-    
 }
 
 html{
@@ -25,7 +23,6 @@ li{
     list-style: none;
 }
 
-
 .main-container{
     display: grid;
     grid-template-rows: 1fr 6fr 1fr;
@@ -38,7 +35,6 @@ li{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
 }
-
 
 .theme{
     display: none;
@@ -84,13 +80,9 @@ li{
     
 }
 
-
 .colors:is(:hover, :focus) { outline-color: greenyellow; }
-
 .colors.active { outline-color: greenyellow; }
-
 .colors:active { transform: scale(0.98); }
-
 
 .to-do-container{
     width: 100%;
@@ -108,7 +100,6 @@ li{
     width: 1.7rem;
     height: 1.7rem;
 }
-
 
 .menu:hover{
     
@@ -143,7 +134,6 @@ li{
     margin-top: 1rem;
     width: 15rem;
 }
-
 
 .welcome-text{
     display: none;
@@ -196,13 +186,11 @@ li{
     transform: scale(0.98);
 }
 
-
 .circle-icon{
     margin-left: 5px;
     font-size: 1.5rem;
     
 }
-
 
 .checkmark-icon.active{
     color: #fff;
@@ -224,7 +212,6 @@ li{
     opacity: 1;
 }
 
-
 .delete-icon{
     position: absolute;
     right: 1rem;
@@ -234,7 +221,6 @@ li{
 .list:is(:hover, :focus-within) .delete-icon{
     opacity: 1;
 }
-
 
 .delete-icon:hover{
     color: red;
@@ -282,14 +268,10 @@ input::placeholder{
     padding-left: .1rem;
 }
 
-
-
 input[type=text]{
     font-size: 1rem;
     padding-left: .6rem;
 }
-
-
 
 /* Media Queries for responsiveness */
 

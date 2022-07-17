@@ -50,6 +50,16 @@ form.addEventListener("submit", function (e) {
     ul.insertAdjacentHTML("afterbegin",html);
         
     tasks.push(userTask);
+    addClass ();
+  }
+  
+  this.reset();
+});
+
+
+addClass();
+
+function addClass (){
     if(tasks.length < 1){
         welcomeImg.classList.add("active");
         welcomeText.classList.add("active");
@@ -57,22 +67,11 @@ form.addEventListener("submit", function (e) {
     else{
         welcomeImg.classList.remove("active");
         welcomeText.classList.remove("active");
+    
     }
-  }
-  
-  this.reset();
-});
-
-
-if(tasks.length < 1){
-    welcomeImg.classList.add("active");
-    welcomeText.classList.add("active");
 }
-else{
-    welcomeImg.classList.remove("active");
-    welcomeText.classList.remove("active");
 
-}
+
 
 const createList = function (todos = [], list) {
 
@@ -107,15 +106,7 @@ ul.addEventListener("click", function (e) {
     deleteTask(e);
     taskDeleteAudio.play();
     tasks.pop(e);
-    if(tasks.length < 1){
-        welcomeImg.classList.add("active");
-        welcomeText.classList.add("active");
-    }
-    else{
-        welcomeImg.classList.remove("active");
-        welcomeText.classList.remove("active");
-    
-    }
+    addClass ();
   }
   
 });
