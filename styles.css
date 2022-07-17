@@ -296,13 +296,22 @@ input[type=text]{
 @media (max-width: 615px) {
     .main-container{
         width: 100%;
+        height: 90vh;
         margin-top: 0;
-        height: 100vh;
-        padding: 0 .3rem .1rem .3rem;
+        padding-top: .1rem;
         background: transparent;
         border-radius: 0%;
         box-shadow: none;
         
+    }
+
+    .input-container{
+        top: 3rem;
+    }
+
+
+    .to-do-container{
+        height: 35rem;
     }
 
     .theme{
